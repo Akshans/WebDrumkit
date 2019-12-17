@@ -35,6 +35,16 @@ function playSound(letter)
     default: console.log(letter);
 }
 
+function buttonAnimation(currentKey)
+{
+  var activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function(){
+    activeButton.classList.remove("pressed");
+  }, 100);
+
+
+}
 for(var i = 0; i< document.querySelectorAll(".drum").length; i++)
 {
   document.querySelectorAll(".drum")[i].addEventListener("click", playClick);
@@ -45,6 +55,7 @@ for(var i = 0; i< document.querySelectorAll(".drum").length; i++)
     // audio.play();
     var butInnerHTML = this.innerHTML;
     playSound(butInnerHTML);
+    buttonAnimation(butInnerHTML);
 
     }
   }
@@ -56,4 +67,5 @@ function playKey(e)
 {
   var key = e.key;
   playSound(key);
+  buttonAnimation(e.key);
 }
