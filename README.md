@@ -1,2 +1,2 @@
 # WebDrumkit
-Save money on real drums!
+Online drum kit
